@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { FormCharacterComponent } from './components/form-character/form-character.component';
+import { DragonBallService } from './services/dragon-ball.service';
 
 
 
@@ -21,6 +22,9 @@ import { FormCharacterComponent } from './components/form-character/form-charact
   ],
   exports: [
     MainPageComponent
+  ],
+  providers: [
+    DragonBallService
   ]
 })
 export class DragonBallModule { }

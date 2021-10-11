@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICharacter } from '../../interfaces/Characters';
+import { DragonBallService } from '../../services/dragon-ball.service';
 
 @Component({
   selector: 'app-characters',
@@ -8,9 +9,13 @@ import { ICharacter } from '../../interfaces/Characters';
 })
 export class CharactersComponent implements OnInit {
 
-  @Input() characters!: ICharacter[];
+  constructor(
+    private _dragonBallService: DragonBallService
+  ) { }
 
-  constructor() { }
+  get characters(): ICharacter[] {
+    return this._dragonBallService.characters;
+  }
 
   ngOnInit(): void {
   }
